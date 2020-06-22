@@ -1,0 +1,119 @@
+C:\Program Files (x86)\IntelSWTools\openvino\bin>setupvars.bat
+
+
+face-detection-adas-binary-0001
+
+python "C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\tools\model_downloader\downloader.py" --name face-detection-adas-0001 --precisions FP32,FP16,INT8
+
+python "C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\tools\model_downloader\downloader.py" --name face-detection-adas-binary-0001 --precisions FP32,FP16,INT8
+
+
+head-pose-estimation-adas-0001
+
+python "C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\tools\model_downloader\downloader.py" --name head-pose-estimation-adas-0001 --precisions FP32,FP16,INT8
+
+
+landmarks-regression-retail-0009
+
+python "C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\tools\model_downloader\downloader.py" --name landmarks-regression-retail-0009 --precisions FP32,FP16,INT8
+
+
+gaze-estimation-adas-0002
+
+python "C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\tools\model_downloader\downloader.py" --name gaze-estimation-adas-0002 --precisions FP32,FP16,INT8
+
+
+https://github.com/Eslam26/Computer-Pointer-Controller/blob/master/src/project_file.py
+
+
+Command to run app
+python ./starter/starter/src/main.py -face_m ./intel/face-detection-adas-0001/FP32/face-detection-adas-0001 -head_pose_m ./intel/head-pose-estimation-adas-0001/FP32/head-pose-estimation-adas-0001 -facial_m ./intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009 -gaze_m ./intel/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002 -i ./starter/starter/bin/demo.mp4 -l "C:\Program Files (x86)\IntelSWTools\openvino\inference_engine\bin\intel64\Release\cpu_extension_avx2.dll" -d CPU -pt 0.6 -flags face_detect face_landmark_detect head_pose gaze_est
+
+python ./starter/starter/src/main.py -face_m ./intel/face-detection-adas-0001/FP16/face-detection-adas-0001 -head_pose_m ./intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001 -facial_m ./intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009 -gaze_m ./intel/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002 -i ./starter/starter/bin/demo.mp4 -l "C:\Program Files (x86)\IntelSWTools\openvino\inference_engine\bin\intel64\Release\cpu_extension_avx2.dll" -d CPU -pt 0.6 -flags face_detect face_landmark_detect head_pose gaze_est
+
+python ./starter/starter/src/main.py -face_m ./intel/face-detection-adas-0001/INT8/face-detection-adas-0001 -head_pose_m ./intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001 -facial_m ./intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009 -gaze_m ./intel/gaze-estimation-adas-0002/INT8/gaze-estimation-adas-0002 -i ./starter/starter/bin/demo.mp4 -l "C:\Program Files (x86)\IntelSWTools\openvino\inference_engine\bin\intel64\Release\cpu_extension_avx2.dll" -d CPU -pt 0.6 -flags face_detect face_landmark_detect head_pose gaze_est
+
+
+python ./starter/starter/src/main.py -face_m ./intel/face-detection-adas-0001/FP32/face-detection-adas-0001 -head_pose_m ./intel/head-pose-estimation-adas-0001/FP32/head-pose-estimation-adas-0001 -facial_m ./intel/landmarks-regression-retail-0009/FP32/landmarks-regression-retail-0009 -gaze_m ./intel/gaze-estimation-adas-0002/FP32/gaze-estimation-adas-0002 -i ./starter/starter/bin/demo.mp4 -d GPU -pt 0.6 -flags face_detect face_landmark_detect head_pose gaze_est
+
+python ./starter/starter/src/main.py -face_m ./intel/face-detection-adas-0001/FP16/face-detection-adas-0001 -head_pose_m ./intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001 -facial_m ./intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009 -gaze_m ./intel/gaze-estimation-adas-0002/FP16/gaze-estimation-adas-0002 -i ./starter/starter/bin/demo.mp4 -d GPU -pt 0.6 -flags face_detect face_landmark_detect head_pose gaze_est
+
+python ./starter/starter/src/main.py -face_m ./intel/face-detection-adas-0001/INT8/face-detection-adas-0001 -head_pose_m ./intel/head-pose-estimation-adas-0001/FP16/head-pose-estimation-adas-0001 -facial_m ./intel/landmarks-regression-retail-0009/FP16/landmarks-regression-retail-0009 -gaze_m ./intel/gaze-estimation-adas-0002/INT8/gaze-estimation-adas-0002 -i ./starter/starter/bin/demo.mp4 -d GPU -pt 0.6 -flags face_detect face_landmark_detect head_pose gaze_est
+
+
+FP32 -- CPU
+---------------
+Face detection load time in seconds: 279.83 ms
+Facial Landmark detection load time in seconds: 343.13 ms
+Head pose detection load time in seconds: 423.92 ms
+Gaze estimation load time in seconds: 522.65 ms
+MFX: Unsupported extension: ./starter/starter/bin/demo.mp4
+counter 59 seconds
+Total model load time in seconds: 0.74 s
+Total inference time in seconds: 79.88 s
+fps 0.7386079118678017
+
+
+
+FP16 -- CPU
+---------------
+Face detection load time in seconds: 281.28 ms
+Facial Landmark detection load time in seconds: 341.59 ms
+Head pose detection load time in seconds: 422.42 ms
+Gaze estimation load time in seconds: 524.25 ms
+MFX: Unsupported extension: ./starter/starter/bin/demo.mp4
+counter 59 seconds
+Total model load time in seconds: 0.70 s
+Total inference time in seconds: 79.40 s
+fps 0.743073047858942
+
+
+INT8 -- CPU
+----------------
+Face detection load time in seconds: 216.14 ms
+Facial Landmark detection load time in seconds: 279.97 ms
+Head pose detection load time in seconds: 362.75 ms
+Gaze estimation load time in seconds: 465.38 ms
+MFX: Unsupported extension: ./starter/starter/bin/demo.mp4
+counter 59 seconds
+Total model load time in seconds: 0.65 s
+Total inference time in seconds: 79.64 s
+fps 0.7408337518834757
+
+
+FP32 -- GPU 
+------------------------
+Face detection load time in seconds: 23120.81 ms
+Facial Landmark detection load time in seconds: 27097.54 ms
+Head pose detection load time in seconds: 31652.50 ms
+Gaze estimation load time in seconds: 38212.56 ms
+MFX: Unsupported extension: ./starter/starter/bin/demo.mp4
+counter 59 seconds
+Total model load time in seconds: 40.00 s
+Total inference time in seconds: 83.60 s
+fps 0.7057416267942584
+
+FP16 -- GPU
+------------------------
+Face detection load time in seconds: 21522.03 ms
+Facial Landmark detection load time in seconds: 24867.17 ms
+Head pose detection load time in seconds: 29076.16 ms
+Gaze estimation load time in seconds: 36292.61 ms
+MFX: Unsupported extension: ./starter/starter/bin/demo.mp4
+counter 59 seconds
+Total model load time in seconds: 37.58 s
+Total inference time in seconds: 82.43 s
+fps 0.7157588256702656
+
+
+INT -- GPU
+---------------------
+Face detection load time in seconds: 22375.12 ms
+Facial Landmark detection load time in seconds: 25844.73 ms
+Head pose detection load time in seconds: 30432.83 ms
+Gaze estimation load time in seconds: 37536.34 ms
+MFX: Unsupported extension: ./starter/starter/bin/demo.mp4
+counter 59 seconds
+Total model load time in seconds: 39.35 s
+Total inference time in seconds: 83.60 s
+fps 0.7057416267942584
